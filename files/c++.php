@@ -1,3 +1,21 @@
+<?php
+session_start();
+?>
+
+
+<?php
+$host = "localhost";  
+$user = "root";  
+$password = '';  
+$db_name = "prateekpro";  
+  
+$con = mysqli_connect($host, $user, $password, $db_name);
+
+if($_SESSION[email]!=""){
+
+    echo'
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,496 +24,7 @@
     <title>C++ 1</title>
     <!-- <link rel="stylesheet" href="leftsidebar.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-    <style>
-*
-{
-    padding:0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
-
-.container
-{
-    border:0px solid red;
-    position: relative;
-    height: 5000px;
-
-}
-.header
-{
-    height: 70px;
-    width: 100%;
-   z-index: 5;
-    background: linear-gradient(to right,lightgreen,green);
-       
-    display: flex;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-
-}
-.header img
-{
-    margin-right: 15px;
-    width: 70px;
-    height: 70px;
-    
-}
-.header h1
-{
-   line-height: 70px;
-    color: white;
-}
-.content1
-{
-    
-    width: 100%;
-    padding: 20px;
-
-}
-.content1 img
-{
-   
-    width:70%;
-  
-    max-width: 700px;
-    display: block;
-    margin: auto;
-}
-.content1 p
-{
-    
-    text-align: justify;
-}
-.sidebar
-{
-    width: 20%;
-    height: 700px;
-    
-    background: linear-gradient(to right,rgba(128, 255, 170,0.7), rgba(0, 255, 85,0.7));
-    left: -100%;
-    position: absolute;
-    top: 70px;
-   transition: .4s;
-
-}
-.sidebar ul
-{
-    list-style: none;
-    
-
-}
-
-.sidebar ul li
-{
-    border-bottom: 2px solid rgba(255,255,255,.1);
-}
-
-.sidebar ul li a
-{
-    display: block;
-    font-size: 20px;
-    padding: 15px 25px;
-    color: white;
-    text-decoration: none;
-    transition: .4s;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-.sidebar ul li a i
-{
-    margin-right: 15px;
-}
-
-.sidebar ul li a:hover
-{
-    border-left: 15px solid white;
-}
-
-.rightbar ul li
-{
-    padding-top: 20px;
-}
-.rightbar ul
-{
-    list-style: none;
-   
-}
-.rightbar ul li a
-{
-    display: block;
-    font-size: 20px;
-    padding: 15px 25px;
-    color: white;
-    text-decoration: none;
-    transition: .4s;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.rightbar
-{
-    z-index:1;
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 70px;
-    width: 20%;
-    height: 700px;
-    background: linear-gradient(to right,rgba(128, 255, 170,0.7), rgba(0, 255, 85,0.7));
-   
-}
-
-.social
-{
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid rgba(255,255,255,.1) ;
-    border-top: 2px solid rgba(255,255,255,.1) ;
-    justify-content: space-evenly;
-    font-size: 25px;
-    margin-top: 360px;
-    padding:10px 25px;
-}
-#chk
-{
-   visibility: hidden;
-}
-
-i
-{
-    color: white;
-   
-    
-}
-.show-btn,.hide-btn
-{
-    color: white;
-    font-size: 30px;
-    display: block;
-    position: fixed;
-    top: 20px;
-    left: 40px;
-}
-
-.hide-btn
-{
-    opacity: 0;
-}
-#chk:checked ~ .sidebar
-{
-    
-    left: 0%;
-}
-
-#chk:checked ~ .hide-btn
-{
-    opacity: 1;
-}
-
-#chk:checked ~ .show-btn
-{
-    opacity: 0;
-}
-
-#chk:checked ~ .content1
-{
-    width: 80%;
-    margin: auto;
-
-}
-/* #chk:checked ~ .content1 p
-{
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    width: 700px;
-    text-align: justify;
-} */
-
-@media (max-width: 780px)
-{
-    .sidebar
-    {
-        width: 100vw;
-        display: flex;
-       
-        justify-content:center;
-        
-
-    }
-
-    .social
-    {
-        display: flex;
-        align-items: center;
-        font-size: 30px;
-        
-        justify-content: center;
-
-       
-    }
-    .social a i
-    {
-        padding-left: 10px;
-
-    }
-
-
-
-  
-}
-
-
-
-/* footer */
-
-.footer
-{
-    position: sticky;
-    top: 4000px;       
-
-}
-.content
-         {
-             position: absolute;
-           display: block;
-            justify-content: center;
-            color: rgb(110, 109, 109) !important;
-            border: 2 px solid white;
-            bottom: 0px;
-            left: 0;
-         }
-
-         .sec-1
-         {
-             /* background-color: rgb(54, 53, 53); */
-             
-             background: linear-gradient(to right,rgba(128, 255, 170,0.7), rgba(0, 255, 85,0.7));
-   
-             display: flex;
-             flex-direction: row;
-             width: 100%;
-             height: auto;
-             padding: 15px;
-             justify-content:space-between;
-         }
-
-         .about
-         {
-             width: 40%;
-         }
-
-         .about h3
-         {
-             color: aliceblue;
-         }
-         .about p
-         {
-             color: rgb(145, 137, 137);
-
-         }
-
-         /* common style  */
-
-         i
-         {
-             padding-right: 5px;
-         }
-         
-
-         a{
-             color: rgb(145, 137, 137);
-             text-decoration: none;
-             text-align: justify;
-         }
-         a:hover
-         {
-             color: orange;
-         }
-         li
-         {
-             color:  rgb(145, 137, 137);
-             list-style: none;
-         }
-
-         h3
-         {
-             text-transform: uppercase;
-             color: aliceblue ;
-             padding-bottom: 5px;
-         }
-         .categories h3
-         {
-            color: aliceblue;
-         }
-
-         .contact
-         {
-             display: display-flex;
-             justify-content: center;
-         }
-
-         .sec-2
-         {
-            
-             
-             display: flex;
-             flex-direction: row;
-             justify-content: center;
-             padding-top: 20px;
-             padding-bottom: 30px;
-             border-bottom:2px solid rgb(134, 129, 129) ;
-             /* background-color:  rgb(54, 53, 53); */
-             background: linear-gradient(to right,rgba(51, 151, 255,0.7), rgba(53, 51, 255,0.7));
-   
-             flex-direction: ;
-         }
-         
-
-         .sec-2 h3
-         {
-            text-transform: inherit !important;
-             color: rgb(145, 137, 137) !important;
-         }
-
-         .sec-2 a
-         {
-            
-             color: white;
-             background-color: red;
-             padding: 5px 15px;
-             margin-left: 10px;
-             border-radius: 15px;
-         }
-
-         .sec-2 a:hover
-         {
-             background-color: orange;
-         }
-
-         .sec-3
-         {
-             display: flex;
-             justify-content:center;
-             padding-top:20px;
-             padding-bottom:20px;
-             background-color: rgb(54, 53, 53);
-
-         }
-
-         .sec-3 a
-         {
-             padding: 5px;
-             margin-left: 10px;
-             background-color: rgb(238, 235, 235,.1);
-             border-radius: 20px;
-             font-size: 20px;
-         }
-
-        .facebook:hover
-        {
-            background-color: blue;
-        }
-
-        .twitter:hover
-        {
-            background-color: skyblue;
-        }
-        .google:hover
-        {
-            background-color: red;
-        }
-        .linkedin:hover
-        {
-            background-color: lightblue;
-        }
-        .dribbble:hover
-        {
-            background-color: pink;
-        }
-
-
-         
-         .sec-4
-         {
-             display: flex;
-             justify-content: center;
-             background-color: black;
-             height: 50px;
-
-
-         }
-
-         .sec-4 p
-         {
-             line-height: 50px;
-             color: rgb(145, 137, 137);
-
-         }
-
-         .sec-4 p::after
-         {
-             content: '';
-             display: block;
-             width: 0;
-             height: 3px;
-             background-color: orange;
-             position: relative;
-            transition: all .3s;
-            right: 0;
-            bottom: 10px;
-         }
-
-
-
-         .sec-4 p:hover::after
-         { 
-             width: 100%;
-         }
-
-         
-
-         
-
-         .Clist li
-         {
-             color:rgb(153, 0, 255) ;
-         }
-
-         .Ccontent
-         {
-             z-index:2 ;
-            position: relative;
-            top: 80px;
-            left: 100px;
-            width: 60%; 
-         }
-        
-
-        .Ccontent h3 
-        {  
-   
-            color: rgb(153, 0, 255); 
-  
-        } 
-
-        table, th, td {  
-            padding: 10px 10px;
-  border: 2px solid black;  
-  border-collapse: collapse;  
-} 
-
-
-   
-    </style>
-
-
+    <link rel="stylesheet" href="../css/c++.css">
 </head>
 <body>
  
@@ -515,7 +44,7 @@ i
     </label>
     <div class="sidebar">
         <ul>
-            <li><a href="https://vikasyadav18.github.io/miniProject/index.html"><i class="fa fa-home"><span>home</span></i></a></li>
+            <li><a href="../index.html"><i class="fa fa-home"><span>home</span></i></a></li>
             <li><a href="#"><i class="fa fa-user"><span>About</span></i></a></li>
             <li><a href="#"><i class="fa fa-tasks"><span>services</span></i></a></li>
             <li><a href="#"><i class="fa fa-rss"><span>Blog</span></i></a></li>
@@ -531,9 +60,9 @@ i
     <!-- right Side -->
     <div class="rightbar">
         <ul>
-            <li><a href="https://vikasyadav18.github.io/miniProject/files/c++1.html"><i class="fa fa-tasks"><span>Learn C++</span></i></a></li>
-            <li><a href="https://vikasyadav18.github.io/miniProject/files/c++2.html"><i class="fa fa-tasks"><span>Application and classes of C++</span></i></a></li>
-           <li><a href="https://vikasyadav18.github.io/miniProject/index.html"><i class="fa fa-rss"><span>More</span></i></a></li>
+            <li><a href="files/c++.php"><i class="fa fa-tasks"><span>Learn C++</span></i></a></li>
+            <li><a href="files/c++2.html"><i class="fa fa-tasks"><span>Application and classes of C++</span></i></a></li>
+           <li><a href="../index.html"><i class="fa fa-rss"><span>More</span></i></a></li>
         </ul>
       
     </div>
@@ -546,8 +75,8 @@ i
 <div style="text-align:justify" class="Ccontent">
     <!-- /*1 page*/ -->
     <h1>WHAT IS C++</h1>
-    <h3>C++ is one of the world's most popular programming languages.<br>
-        C++ can be found in today's operating systems, Graphical User Interfaces, and embedded systems.<br>
+    <h3>C++ is one of the world most popular programming languages.<br>
+        C++ can be found in today operating systems, Graphical User Interfaces, and embedded systems.<br>
         C++ is an object-oriented programming language which gives a clear structure to programs and allows code to be reused, lowering development costs.<br>
         C++ is portable and can be used to develop applications that can be adapted to multiple platforms.<br>
         C++ is fun and easy to learn!<br>
@@ -697,7 +226,7 @@ i
        
         <section class="sec-2">
             <h3>Register for Free</h3>
-            <a href="#">Signup!</a>
+            <a href="../signup.html">Signup!</a>
 
         </section>
 
@@ -719,3 +248,9 @@ i
       
 </body>
 </html>
+';
+        }
+        else{
+            header("Location: ../files/signin.html");
+        }
+        ?>
