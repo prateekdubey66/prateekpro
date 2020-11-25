@@ -1,3 +1,4 @@
+
 *
 {
     padding:0;
@@ -13,16 +14,16 @@
 {
     border:0px solid red;
     position: relative;
-    /* height: 850px; */
+    height: 850px;
 
 }
 .header
 {
     height: 70px;
-    /* width: 100%; */
-    z-index: 5;
+    width: 100%;
+   z-index: 5;
     background: linear-gradient(to right,lightgreen,green);
-       
+    
     display: flex;
     position: fixed;
     justify-content: center;
@@ -171,6 +172,7 @@ i
     position: fixed;
     top: 20px;
     left: 40px;
+    z-index: 6;
 }
 
 .hide-btn
@@ -246,10 +248,10 @@ i
 /* footer */
 
 .footer
-{
+{display: none;
     position: sticky;
     top: 4000px;       
-display: none;
+
 }
 .content
          {
@@ -327,7 +329,7 @@ display: none;
 
          .contact
          {
-             display:flex;
+             display: display-flex;
              justify-content: center;
          }
 
@@ -344,7 +346,7 @@ display: none;
              /* background-color:  rgb(54, 53, 53); */
              background: linear-gradient(to right,rgba(51, 151, 255,0.7), rgba(53, 51, 255,0.7));
    
-             /* flex-direction: ; */
+             
          }
          
 
@@ -409,7 +411,12 @@ display: none;
         {
             background-color: pink;
         }
-
+        .Ccontent ul li{
+list-style: circle;
+color: black;
+margin-left: 40px;
+margin:10px;
+         }
 
          
          .sec-4
@@ -453,23 +460,67 @@ display: none;
 
          
 
-         
+         .Clist li
+         {
+             color:rgb(23, 23, 24) ;
+         }
 
-         .Pcontent
+         .Ccontent
          {
              z-index: 2;
-            position: absolute;
+            position: relative;
             top: 80px;
             left: 100px;
-            width: 70%; 
-            border:2px solid green;
-            
+            width: 70%;
+            height: 700px;
+            overflow: auto;
+            padding: 20px;
+            border:2px solid black; 
          }
         
 
-        .Pcontent h3 
+        .Ccontent h3 
         {  
    
-            color: rgb(10, 10, 10); 
+            color: rgb(19, 18, 19); 
   
         } 
+
+        table, th, td {  
+            padding: 10px 10px;
+  border: 2px solid black;  
+  border-collapse: collapse;  
+} 
+
+.mybut button{
+    display:inline-block;
+    width:100px;
+    height:30px;
+    border-radius:20px;
+    color:white;
+    background-color:orange;
+    border:none;
+}
+.mybut a{
+    text-decoration:none;
+    color:white;
+}
+.mybut .next{
+float:right;
+}
+#search input{
+    position:relative;
+     left:500px;
+     width:200px;
+     height:40px;
+ }
+ .fa-search{
+     position:relative;
+     left:510px;
+     color:white;
+ 
+ }
+ .footer{
+    display:none;
+}
+   

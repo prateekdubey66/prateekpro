@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>how to install C</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <style>
         
 *
@@ -461,7 +462,7 @@ i
          }
          .Ccontent h2 , h3
          {
-            color: rgb(2, 2, 7)); 
+            color: rgb(2, 2, 7); 
          }
      
          .Ccontent
@@ -496,6 +497,18 @@ i
 .mybut .next{
 float:right;
 }
+#search input{
+       position:relative;
+        left:500px;
+        width:200px;
+        height:40px;
+    }
+    .fa-search{
+        position:relative;
+        left:510px;
+        color:white;
+    
+    }
         </style>
 </head>
 <body>
@@ -503,6 +516,10 @@ float:right;
         <div class="header">
             
             <h1 >Study <sub>Point</sub></h1>
+            <form action="../php/search.php" method="POST" id="search">
+                <input type="search" name="searchcontent" placeholder="Search here">
+                 <i class="fa fa-search"></i>
+                </form>
         </div>
          
         <input type="checkbox" id="chk">
@@ -534,7 +551,7 @@ float:right;
                 <li><a href="C.php"><i class="fa fa-tasks"><span> C programming</span></i></a></li>
                 <li><a href="Cintro.html"><i class="fa fa-tasks"><span> History of C</span></i></a></li>
                 <li><a href="C3.html"><i class="fa fa-tasks"><span> How to install C</span></i></a></li>
-                <li><a href="../index.html"><i class="fa fa-rss"><span>More</span></i></a></li>
+                <li><a href="../index.html"><i class="fa fa-rss"><span> More</span></i></a></li>
                 <li><a href="../php/logout.php"><i class="fa fa-id-card"><span> logout</span></i></a></li>
             </ul>
           

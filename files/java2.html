@@ -463,7 +463,7 @@ i
          }
          .Ccontent h2 , h3
          {
-            color: rgb(2, 2, 7)); 
+            color: rgb(2, 2, 7); 
          }
      
          .Ccontent
@@ -499,6 +499,19 @@ i
 float:right;
 }
 
+#search input{
+       position:relative;
+        left:500px;
+        width:200px;
+        height:40px;
+    }
+    .fa-search{
+        position:relative;
+        left:510px;
+        color:white;
+    
+    }
+    
         </style>
 </head>
 <body>
@@ -506,6 +519,11 @@ float:right;
         <div class="header">
             
             <h1 >Study <sub>Point</sub></h1>
+            <form action="../php/search.php" method="POST" id="search">
+                <input type="search" name="searchcontent" placeholder="Search here">
+                 <i class="fa fa-search"></i>
+                </form>
+            
         </div>
          
         <input type="checkbox" id="chk">
@@ -534,13 +552,13 @@ float:right;
         <!-- right Side -->
         <div class="rightbar">
             <ul>
-                <li><a href="java1.html"><i class="fa fa-tasks"><span> java introduction</span></i></a></li>
+                <li><a href="java1.php"><i class="fa fa-tasks"><span> java introduction</span></i></a></li>
                 <li><a href="java2.html"><i class="fa fa-tasks"><span> Application Of Java</span></i></a></li>
                 <li><a href="java3.html"><i class="fa fa-tasks"><span> History of java</span></i></a></li>
-                <li><a href="java4.html"><i class="fa fa-tasks"><span>Features of Java</span></i></a></li>
-                <li><a href="java5.html"><i class="fa fa-tasks"><span>How to set path in java</span></i></a></li>
-                <li><a href="java6.html"><i class="fa fa-tasks"><span>First java programm</span></i></a></li>
-                <li><a href="java7.html"><i class="fa fa-tasks"><span>Internal Details of Hello Java Program</span></i></a></li>
+                <li><a href="java4.html"><i class="fa fa-tasks"><span> Features of Java</span></i></a></li>
+                <li><a href="java5.html"><i class="fa fa-tasks"><span> How to set path in java</span></i></a></li>
+                <li><a href="java6.html"><i class="fa fa-tasks"><span> First java programm</span></i></a></li>
+                <li><a href="java7.html"><i class="fa fa-tasks"><span> Internal Details of Hello Java Program</span></i></a></li>
                 <li><a href="java8.html"><i class="fa fa-tasks"><span> JVM (Java Virtual Machine) Architecture</span></i></a></li>
                 <li><a href="java9.html"><i class="fa fa-tasks"><span> Java Variables</span></i></a></li>
                 <li><a href="../index.html"><i class="fa fa-rss"><span>More</span></i></a></li>

@@ -13,7 +13,7 @@
 {
     border:0px solid red;
     position: relative;
-    height: 5000px;
+    height: 750px;
 
 }
 .header
@@ -246,7 +246,7 @@ i
 /* footer */
 
 .footer
-{
+{   display:none;
     position: sticky;
     top: 4000px;       
 
@@ -454,7 +454,7 @@ i
 
          .Clist li
          {
-             color:rgb(153, 0, 255) ;
+             color:rgb(15, 15, 15) ;
          }
 
          .Ccontent
@@ -470,7 +470,7 @@ i
         .Ccontent h3 
         {  
    
-            color: rgb(153, 0, 255); 
+            color: rgb(8, 8, 8); 
   
         } 
 

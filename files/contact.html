@@ -42,7 +42,7 @@ input[type=submit]:hover {
 <h3>Contact Form</h3>
 
 <div class="container">
-  <form action="/action_page.php">
+  <form action="../php/contact.php" method="POST">
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
@@ -56,7 +56,7 @@ input[type=submit]:hover {
       <option value="usa">USA</option>
     </select>
     <label for="State">State</label>
-    <select id="State" name="State">
+    <select id="State" name="state">
       <option value="uttar pradesh">uttar pradesh</option>
       <option value="punjab">punjab</option>
       <option value="Delhi">Delhi</option>
@@ -73,8 +73,8 @@ input[type=submit]:hover {
       <option value="Nagaland">Nagaland</option>
     </select>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <label for="subject">Message</label>
+    <textarea id="subject" name="message" placeholder="Write something.." style="height:200px"></textarea>
 
     <input type="submit" value="Submit">
   </form>

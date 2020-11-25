@@ -500,9 +500,21 @@ float:right;
 }
 .Ccontent ol li{
 list-style: circle;
-color: green;
+color: black;
 margin-left: 40px;
          }
+         #search input{
+       position:relative;
+        left:500px;
+        width:200px;
+        height:40px;
+    }
+    .fa-search{
+        position:relative;
+        left:510px;
+        color:white;
+    
+    }
 
         </style>
 </head>
@@ -511,6 +523,10 @@ margin-left: 40px;
         <div class="header">
             
             <h1 >Study <sub>Point</sub></h1>
+            <form action="../php/search.php" method="POST" id="search">
+                <input type="search" name="searchcontent" placeholder="Search here">
+                 <i class="fa fa-search"></i>
+                </form>
         </div>
          
         <input type="checkbox" id="chk">
@@ -539,7 +555,7 @@ margin-left: 40px;
         <!-- right Side -->
         <div class="rightbar">
             <ul>
-                <li><a href="java1.html"><i class="fa fa-tasks"><span> java introduction</span></i></a></li>
+                <li><a href="java1.php"><i class="fa fa-tasks"><span> java introduction</span></i></a></li>
                 <li><a href="java2.html"><i class="fa fa-tasks"><span> Application Of Java</span></i></a></li>
                 <li><a href="java3.html"><i class="fa fa-tasks"><span> History of java</span></i></a></li>
                 <li><a href="java4.html"><i class="fa fa-tasks"><span> Features of Java</span></i></a></li>
@@ -566,10 +582,10 @@ margin-left: 40px;
        <b> For executing any java program, you need to</b>
        <br><br>
        <ol>
-           <li>Install the JDK if you don't have installed it, download the JDK and install it</li>
-           <li>Set path of the jdk/bin directory. </li>
-           <li>Create the java program</li>
-           <li>Compile and run the java program</li>
+           <li>Install the JDK if you don't have installed it, download the JDK and install it</li><br>
+           <li>Set path of the jdk/bin directory. </li><br>
+           <li>Create the java program</li><br>
+           <li>Compile and run the java program</li><br>
        </ol><br><br>
       <h2> Creating Hello World Example<br><br></h2>
 
@@ -612,25 +628,25 @@ As displayed in the above diagram, write the simple program of java in notepad a
 <img src="../picture/58.png" alt="" width="50%" height="40%" ><br><br>
 There are many ways to write a Java program. The modifications that can be done in a Java program are given below:<br><br>
 <ol>
-    <li>By changing the sequence of the modifiers, method prototype is not changed in Java.</li>
-    Let's see the simple code of the main method.
+    <li>By changing the sequence of the modifiers, method prototype is not changed in Java.</li><br>
+    Let's see the simple code of the main method.<br>
     <ol>
-        <li>static public void main(String args[])  </li>
+        <li>static public void main(String args[])  </li><br>
     </ol>
-    <li>The subscript notation in Java array can be used after type, before the variable or after the variable.</li>
-    Let's see the different codes to write the main method.
+    <li>The subscript notation in Java array can be used after type, before the variable or after the variable.</li><br>
+    Let's see the different codes to write the main method.<br>
     <ol>
-        <li>public static void main(String[] args)    </li>
-        <li>  public static void main(String []args)   </li> 
-        <li>  public static void main(String args[])  </li>
+        <li>public static void main(String[] args)    </li><br>
+        <li>  public static void main(String []args)   </li> <br>
+        <li>  public static void main(String args[])  </li><br>
     </ol>
-    <li>You can provide var-args support to the main method by passing 3 ellipses (dots)</li>
-    Let's see the simple code of using var-args in the main method. We will learn about var-args later in Java New Features chapter.
+    <li>You can provide var-args support to the main method by passing 3 ellipses (dots)</li><br>
+    Let's see the simple code of using var-args in the main method. We will learn about var-args later in Java New Features chapter.<br>
   <ol>
-      <li> public static void main(String... args)  </li>
+      <li> public static void main(String... args)  </li><br>
   </ol>
-  <li>Having a semicolon at the end of class is optional in Java. </li>
-  Let's see the simple code.
+  <li>Having a semicolon at the end of class is optional in Java. </li><br>
+  Let's see the simple code.<br>
   <pre>
     class A
     {  
@@ -641,20 +657,20 @@ There are many ways to write a Java program. The modifications that can be done 
     }; 
         
   </pre>
-  valid java main method signature
-  <li>    public static void main(String[] args)  </li>
-    <li>   public static void main(String []args)  </li>
-        <li>  public static void main(String args[])  </li>
-            <li>  public static void main(String... args)  </li>
-                <li>  static public void main(String[] args)  </li>
-                    <li> public static final void main(String[] args)  </li>
-                        <li> final public static void main(String[] args) </li> 
-                            <li> final strictfp public static void main(String[] args) </li>
-    Invalid java main method signature
-    <li>public void main(String[] args)  </li>
-        <li>   static void main(String[] args)  </li>
-            <li>   public void static main(String[] args)  </li>
-            <li>   abstract public static void main(String[] args)</li>
+  valid java main method signature<br><br>
+  <li>    public static void main(String[] args)  </li><br>
+    <li>   public static void main(String []args)  </li><br>
+        <li>  public static void main(String args[])  </li><br>
+            <li>  public static void main(String... args)  </li><br>
+                <li>  static public void main(String[] args)  </li><br>
+                    <li> public static final void main(String[] args)  </li><br>
+                        <li> final public static void main(String[] args) </li> <br>
+                            <li> final strictfp public static void main(String[] args) </li><br>
+    Invalid java main method signature<br><br>
+    <li>public void main(String[] args)  </li><br>
+        <li>   static void main(String[] args)  </li><br>
+            <li>   public void static main(String[] args)  </li><br>
+            <li>   abstract public static void main(String[] args)</li><br>
         
 
 </ol>
